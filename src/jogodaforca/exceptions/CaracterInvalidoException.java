@@ -5,6 +5,8 @@ package jogodaforca.exceptions;
  * uma mensagem de erro ao ser inserido um 
  * caractere inválido.
  */
+
+@SuppressWarnings("serial")
 public class CaracterInvalidoException extends JogoDaForcaException {
 
 	

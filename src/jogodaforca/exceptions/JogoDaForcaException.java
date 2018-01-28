@@ -1,5 +1,6 @@
 package jogodaforca.exceptions;
 
+@SuppressWarnings("serial")
 public class JogoDaForcaException extends Exception {
 
 	/**
