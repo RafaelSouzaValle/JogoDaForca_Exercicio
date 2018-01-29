@@ -111,20 +111,12 @@ public class Jogo {
 					 */
 					if (errosRestantes == 1) {
 						System.out.format(mensagemErrosRestantes, errosRestantes, "vez");
-						System.out.println(mensagemErrosRestantes);
-					} else {
-						System.out.format(mensagemErrosRestantes, errosRestantes, "vezes");
-						System.out.println(mensagemErrosRestantes);
 					}
-
-					/**
-					 * Imprime a mensagem com o número de tentativas restantes
-					 */
-					System.out.println(System.out.format(mensagemErrosRestantes, errosRestantes, " vezes"));
-				} else {
-					System.out.println("Limite de erros atingido. Você perdeu.");
-					break;
-				}
+					
+					if (errosRestantes > 1){
+						System.out.format(mensagemErrosRestantes, errosRestantes, "vezes");
+					}
+				} 
 
 				System.out.println();
 
@@ -137,7 +129,17 @@ public class Jogo {
 					System.out.println("Fim do jogo");
 					break;
 				}
-
+				
+				/**
+				 * No caso de esgotar o limite de erros
+				 * exibe mensagem e termina o jogo
+				 */
+				if (erros == LIMITE_ERROS){
+					System.out.println("Limite de erros atingido. Você perdeu.");
+					System.out.println("Fim do jogo");
+					break;
+				}
+				
 			} catch (CaracterInvalidoException e) {
 				/**
 				 * No caso de ocorrer uma exceção,
